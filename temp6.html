@@ -1,0 +1,183 @@
+[13:13, 5/22/2024] Franktech Technologies: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Snacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 1em;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        .section-title {
+            color: #4CAF50;
+        }
+
+        #snacks .snack {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            padding: 1em;
+        }
+
+        .snack h3 {
+            margin: 0;
+        }
+
+        .snack p {
+            margin: 0.5em 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #help-button {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 2em auto;
+            background-color: #007BFF;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        // Initial stock quantities
+        const stock = {
+            Almonds: 50,
+            'Greek Yogurt': 50,
+            Blueberries: 50,
+            'Dark Chocolate': 50,
+            Hummus: 50,
+            Apples: 50,
+            Carrots: 50,
+            Walnuts: 50,
+            Popcorn: 50,
+            Edamame: 50
+        };
+
+        // Function to show the price of a snack
+        function showPrice(snack) {
+            alert(snack + " costs Ksh 100");
+        }
+
+        // Function to show the stock of a snack
+        function showStock(snack) {
+            alert("There are " + stock[snack] + " " + snack + " left in stock");
+        }
+
+        // Function to proceed with ordering a snack and choosing payment method
+        function orderSnack(snack) {
+            const quantity = prompt("Enter the number of " + snack + " you want to order:");
+            if (quantity && !isNaN(quantity) && quantity > 0) {
+                const totalCost = quantity * 100;
+                const paymentMethod = prompt("Total cost: Ksh " + totalCost + "\nEnter payment method: M-Pesa, Airtel Money, or Bank transfer");
+                if (paymentMethod) {
+                    alert("You have ordered " + quantity + " " + snack + ".\nTotal cost: Ksh " + totalCost + "\nPayment method: " + paymentMethod);
+                } else {
+                    alert("Invalid payment method entered.");
+                }
+            } else {
+                alert("Invalid quantity entered.");
+            }
+        }
+
+        // Function to show help information
+        function showHelp() {
+            alert("How to Order:\n1. Click on the snack name to order.\n2. Enter the quantity and view the total cost.\n3. Choose a payment method: M-Pesa, Airtel Money, or Bank transfer.\n\nHow to Check Stock:\n1. Click the 'Check Stock' button next to the snack.\n\nHow to Pay:\n1. Contact us for payment details.");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Healthy Snacks</h1>
+        <p>Discover the health benefits of our snacks and place your order below!</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2 class="section-title">About Us</h2>
+            <p>At Healthy Snacks, we are committed to offering delicious and nutritious snacks that fit perfectly into your lifestyle. Our selection is carefully curated to provide you with a variety of options that are both tasty and beneficial to your health. We believe that snacking should not only satisfy your cravings but also contribute positively to your well-being.</p>
+        </section>
+        <section id="mission">
+            <h2 class="section-title">Our Mission</h2>
+            <p>Our mission is to promote a healthier lifestyle by providing easy access to wholesome snacks. We aim to inspire our customers to make better snack choices by offering products that are not only good for their health but also enjoyable. We are dedicated to sustainability and quality, ensuring that every snack we offer meets our high standards.</p>
+        </section>
+        <section id="vision">
+            <h2 class="section-title">Our Vision</h2>
+            <p>Our vision is to become a leading provider of healthy snacks worldwide, known for our commitment to quality, innovation, and customer satisfaction. We envision a world where healthy snacking is the norm, and everyone has access to nutritious options that enhance their well-being. We strive to make a positive impact on our community and the environment through sustainable practices and conscious choices.</p>
+        </section>
+        <section id="snacks">
+            <h2 class="section-title">Our Snacks</h2>
+            <div class="snack">
+                <h3><a href="javascript:void(0)" onclick="orderSnack('Almonds')">1. Almonds</a></h3>
+                <p>Rich in healthy fats, fiber, protein, magnesium, and vitamin E.</p>
+                <button onclick="showStock('Almonds')">Check Stock</button>
+            </div>
+            <div class="snack">
+                <h3><a href="javascript:void(0)" onclick="orderSnack('Greek Yogurt')">2. Greek Yogurt</a></h3>
+                <p>High in protein and probiotics, which are good for your gut health.</p>
+                <button onclick="showStock('Greek Yogurt')">Check Stock</button>
+            </div>
+            <div class="snack">
+                <h3><a href="javascript:void(0)" onclick="orderSnack('Blueberries')">3. Blueberries</a></h3>
+                <p>Packed with antioxidants, vitamins, and fiber.</p>
+                <button onclick="showStock('Blueberries')">Check Stock</button>
+            </div>
+             <div class="snack">
+                <h3><a href="javascript:void(0)" onclick="orderSnack('Dark Chocolate')">4. Dark Chocolate</a></h3>
+                <p>Loaded with antioxidants and can improve brain function.</p>
+                <button onclick="showStock('Dark Chocolate')">Check Stock</button>
+            </div>
+            <!-- Add more snack divs here -->
+
+        </section>
+        <button id="help-button" onclick="showHelp()">Help</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Healthy Snacks. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
